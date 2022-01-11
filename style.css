@@ -1,0 +1,57 @@
+/*CSS grid = mřížka v cssku, dvousměrný design.
+CSS flexbox = jednosměrný design, ale směry se mohou měnit. Rozlišuje flex kontejner a flex položky!*/
+.obdelnik {
+    width: 200px;
+    height: 150px;
+    border: 2px dashed rgb(112, 79, 16);
+    margin: 10px;
+    font-size: 40px;
+    text-align: center;
+    line-height: 150px;
+    /*float: left; nebo display:inline-block = obdelníčky vedle sebe*/
+}
+.obdelnik:nth-child(4) {
+    background-color: yellow;
+}
+.obdelnik:nth-child(4n+1) { /*pseudotřída, opakování po čtyřech*/
+    background-color: #ee3e64;
+}
+.obdelnik:nth-child(4n+2) {
+    background-color: #44accf;
+}
+.obdelnik:nth-child(4n+3) {
+    background-color: #b7d84b;
+}
+.kontejner {
+    border: 2px dotted red;
+    padding: 5px;
+    height: 400px;
+    background-color: rgb(172, 197, 123);
+}
+.kontejner {
+    display: flex; 
+    /*vodorovný směr*/
+    justify-content: center; /*flex-start nebo flex-end, mezera před a vedle sebe space-around, space-evenly mezery jsou všude stejný*/
+    /*svislý směr*/
+    align-items: center;
+    flex-wrap: wrap; /*zalomování na další řádek*/
+}
+.obdelnik{
+    /*flex-grow: 1; 1 = obdelníky mohou růst, 0 = růst nemohou*/
+    flex-shrink: 0; /*= nesmíš se zalamovat!*/
+}
+.obdelnik:nth-child(2) {
+    /*flex-grow: 2*/
+    flex-shrink: 1;
+}
+.obdelnik:nth-child(3) {
+    /*flex-grow: 10*/
+    flex-shrink: 3;
+
+}
+.obdelnik:nth-child(2) {
+    order: 10; /*tvoje pořadí bude až desátý v řadě*/
+}
+.obdelnik:nth-child(3) {
+    order: -1;
+}
